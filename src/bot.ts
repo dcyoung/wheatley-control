@@ -49,7 +49,7 @@ class StewartPlatform {
   applyMechanismState(
     mech: Mechanism.Mechanism3Dof,
     offsetAngles: SimToBotServoOffsetAngles
-  ) {
+  ): void {
     const ang_PR_R = translateServoAngle(
       mech.getServoAngle_Right(),
       offsetAngles.PR_R

@@ -11,7 +11,7 @@ const servoOffsetAngles = Config.DEFAULT_SIM_TO_BOT_SERVO_OFFSET_ANGLES;
 const mech = new Mechanism.Mechanism3Dof(Config.DEFAULT_MECHANISM_PARAMS);
 const sim = new Simulation.HeadlessSimulation(mech);
 
-function updateSimForTrackedTarget(targetPosition) {
+function updateSimForTrackedTarget(targetPosition: THREE.Vector3): void {
   sim.setTargetWorldPosition(targetPosition);
   sim.animateMechanism();
 }

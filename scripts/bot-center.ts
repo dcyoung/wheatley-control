@@ -1,7 +1,7 @@
 import * as j5 from 'johnny-five';
 import { Bot } from '../src';
 
-const board = new j5.default.Board({
+const board = new j5.Board({
   port: 'COM5',
 });
 
