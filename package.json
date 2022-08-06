@@ -1,7 +1,7 @@
 {
-  "name": "typescript-npm-package-template",
+  "name": "wheatley-control",
   "version": "0.0.0-development",
-  "description": "A template for creating npm packages using TypeScript and VSCode",
+  "description": "Control logic for an animatronic Wheatley robot.",
   "main": "./lib/src/index.js",
   "files": [
     "lib/**/*"
@@ -15,17 +15,21 @@
     "semantic-release": "semantic-release",
     "test:watch": "jest --watch",
     "test": "jest --coverage",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "bot:oscillate": "tsc ./scripts/bot-oscillate.ts && node ./scripts/bot-oscillate.js",
+    "sim:oscillate": "tsc ./scripts/sim-oscillate.ts && node ./scripts/sim-oscillate.js",
+    "bot:sweep": "tsc ./scripts/bot-sweep.ts && node ./scripts/bot-sweep.js",
+    "bot:center": "tsc ./scripts/bot-center.ts && node ./scripts/bot-center.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryansonshine/typescript-npm-package-template.git"
+    "url": "git+https://https://github.com/dcyoung/wheatley-control.git"
   },
   "license": "MIT",
   "author": {
-    "name": "Ryan Sonshine",
-    "email": "ryansonshine@users.noreply.github.com",
-    "url": "https://github.com/ryansonshine"
+    "name": "David Young",
+    "email": "david@questionablyartificial.com",
+    "url": "https://github.com/dcyoung"
   },
   "engines": {
     "node": ">=12.0"
@@ -42,14 +46,15 @@
     "codecov"
   ],
   "bugs": {
-    "url": "https://github.com/ryansonshine/typescript-npm-package-template/issues"
+    "url": "https://github.com/dcyoung/wheatley-control/issues"
   },
-  "homepage": "https://github.com/ryansonshine/typescript-npm-package-template#readme",
+  "homepage": "https://github.com/dcyoung/wheatley-control#readme",
   "devDependencies": {
     "@ryansonshine/commitizen": "^4.2.8",
     "@ryansonshine/cz-conventional-changelog": "^3.3.4",
     "@types/jest": "^27.5.2",
     "@types/node": "^12.20.11",
+    "@types/three": "^0.143.0",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "conventional-changelog-conventionalcommits": "^5.0.0",
@@ -63,7 +68,7 @@
     "prettier": "^2.2.1",
     "semantic-release": "^19.0.2",
     "ts-jest": "^27.0.5",
-    "ts-node": "^10.2.1",
+    "ts-node": "^10.9.1",
     "typescript": "^4.2.4"
   },
   "config": {
@@ -118,5 +123,10 @@
       "@semantic-release/npm",
       "@semantic-release/github"
     ]
+  },
+  "dependencies": {
+    "johnny-five": "^2.1.0",
+    "stewart-platform-simulator": "^1.0.1",
+    "three": "^0.143.0"
   }
 }
